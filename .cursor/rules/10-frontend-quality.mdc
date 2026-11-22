@@ -1,0 +1,15 @@
+---
+description: Qualidade de implementação frontend do site Next.js da DuplexSoft.
+globs: **/*.{tsx,ts,jsx,js,css,scss,html}
+alwaysApply: false
+---
+# Frontend quality — DuplexSoft
+
+- Stack: Next.js App Router, React, Tailwind 4 tokens in `globals.css`, deploy OpenNext/Cloudflare. Read Next docs under `node_modules/next/dist/docs/` when APIs may have changed (see `AGENTS.md`).
+- Read `PRODUCT.md` and `DESIGN.md` before substantial UI work. Visual polish commands: Impeccable.
+- Prefer semantic HTML, accessible names, visible focus, keyboard operation, and correct form semantics (`ContactForm` as reference).
+- Handle loading, empty, error, success, and disabled states where relevant (especially contact form and conditional DeskRudder chat).
+- Make responsive behavior content-aware; Header mobile nav is the pattern to extend.
+- Reuse existing tokens and local components. Do not add UI kits or replace Tailwind without a concrete reason.
+- Keep product/contact URLs and copy in `src/lib/site.ts` when possible.
+- Do not invent backend fields, API behavior, prices, testimonials, or user data.

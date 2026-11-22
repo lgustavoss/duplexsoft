@@ -1,0 +1,15 @@
+---
+description: Checagens de conclusão para UI substancial; processo proporcional; evita auditorias duplicadas.
+alwaysApply: false
+---
+# UI completion gate
+
+Before marking **substantial** UI work complete (skip for trivial copy/CSS tweaks):
+
+1. Run relevant project checks that exist (`npm run lint`, typecheck, build as applicable).
+2. Prefer Impeccable for visual craft verification: `/impeccable critique` and/or `/impeccable audit` on the changed surface; optional `npx impeccable detect src/`.
+3. For independent second opinion on rendered UX/hierarchy (not the same as detector rules), invoke `visual-reviewer` once — do not also rerun a full `visual-quality-audit` skill unless the user asks.
+4. For accessibility depth beyond Impeccable `audit`, invoke `accessibility-reviewer` once.
+5. Inspect browser output when tools are available; check one narrow and one desktop viewport when responsive work is in scope.
+6. Fix high-severity findings or explicitly explain why they remain.
+7. Report exactly what was checked. Never claim visual/browser/Impeccable verification without evidence.

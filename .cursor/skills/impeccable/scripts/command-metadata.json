@@ -1,0 +1,98 @@
+{
+  "craft": {
+    "description": "Alias depreciado de compatibilidade para um pedido comum de new-work do Impeccable. Não adiciona comportamento; builds e redesigns naturais usam o mesmo fluxo.",
+    "argumentHint": "[descrição da feature]"
+  },
+  "init": {
+    "description": "Configura o projeto para o Impeccable. Faz entrevista de discovery quando falta contexto e grava PRODUCT.md (estratégico: usuários, marca, princípios); pré-configura o modo live; depois recomenda os melhores comandos. Todo comando seguinte lê esses arquivos. Use uma vez por projeto.",
+    "argumentHint": ""
+  },
+  "document": {
+    "description": "Gera um DESIGN.md com o sistema visual atual. Extrai cores, tipografia, espaçamento, raios e padrões de componentes do código e pede confirmação da linguagem descritiva. Segue o formato Google Stitch DESIGN.md. Use quando precisar de uma especificação visual para o agente manter a marca.",
+    "argumentHint": ""
+  },
+  "extract": {
+    "description": "Extrai padrões, componentes e tokens reutilizáveis para o design system. Identifica repetições e consolida. Use quando houver drift visual e quiser voltar a um sistema consistente.",
+    "argumentHint": "[alvo]"
+  },
+  "live": {
+    "description": "Modo interativo de variantes ao vivo. Selecione elementos no browser, escolha uma ação de design e receba variantes HTML+CSS via HMR. Exige dev server rodando. Use para experimentar alternativas em tempo real.",
+    "argumentHint": ""
+  },
+  "generate": {
+    "description": "Geração de variantes ao vivo guiada pelo agente. Abre o modo live, encontra o elemento na página, rola até ele e entrega N variantes na direção pedida para você ciclar e aceitar. Use em pedidos como 'gere 3 variantes ousadas dos cards de preço', sem seleção manual.",
+    "argumentHint": "[quantidade] [direção] variantes de [elemento]"
+  },
+  "adapt": {
+    "description": "Adapta designs a diferentes tamanhos de tela, dispositivos, contextos ou plataformas. Implementa breakpoints, layouts fluidos e alvos de toque. Use para responsividade, mobile, breakpoints ou compatibilidade entre dispositivos.",
+    "argumentHint": "[alvo] [contexto (mobile, tablet, print...)]"
+  },
+  "animate": {
+    "description": "Revisa uma feature e adiciona animações, microinterações e motion com propósito, melhorando usabilidade e delight. Use quando pedirem animação, transições, hover ou UI mais viva.",
+    "argumentHint": "[alvo]"
+  },
+  "audit": {
+    "description": "Checagens técnicas de qualidade: acessibilidade, performance, theming, responsivo e anti-padrões. Gera relatório com severidade P0–P3 e plano acionável. Use para a11y, performance ou revisão técnica.",
+    "argumentHint": "[área (feature, página, componente...)]"
+  },
+  "bolder": {
+    "description": "Amplifica designs seguros ou sem graça para ficarem mais interessantes e estimulantes, sem perder usabilidade. Use quando a UI parecer genérica, sem personalidade ou sem impacto.",
+    "argumentHint": "[alvo]"
+  },
+  "clarify": {
+    "description": "Melhora copy de UX, erros, microcopy, labels e instruções para a interface ficar mais clara. Use quando o texto confundir, labels forem ruins ou as mensagens de erro forem ruins.",
+    "argumentHint": "[alvo]"
+  },
+  "colorize": {
+    "description": "Adiciona cor estratégica a interfaces monocromáticas ou sem interesse visual. Use quando a UI parecer cinza, sem calor ou precisar de mais cor/expressão.",
+    "argumentHint": "[alvo]"
+  },
+  "critique": {
+    "description": "Avalia o design sob ótica de UX: hierarquia, arquitetura da informação, carga cognitiva, qualidade geral, scoring, personas, detecção de anti-padrões e feedback acionável. Use para revisar, criticar ou dar feedback em um design.",
+    "argumentHint": "[área (feature, página, componente...)]"
+  },
+  "delight": {
+    "description": "Adiciona momentos de prazer, personalidade e toques memoráveis. Eleva o funcional ao delicioso. Use para polish, personalidade, microinterações ou UI mais divertida.",
+    "argumentHint": "[alvo]"
+  },
+  "distill": {
+    "description": "Reduz o design ao essencial, removendo complexidade desnecessária. Use para simplificar, despoluir, reduzir ruído ou deixar a UI mais focada.",
+    "argumentHint": "[alvo]"
+  },
+  "harden": {
+    "description": "Deixa a interface pronta para produção: erros, i18n, overflow de texto, edge cases e resiliência com dados reais. Use para endurecer, tratar estados de erro ou overflow/i18n.",
+    "argumentHint": "[alvo]"
+  },
+  "onboard": {
+    "description": "Desenha onboarding, primeira experiência e estados vazios que levam o usuário ao valor. Cobre welcome, setup, disclosure progressivo, tooltips e ativação. Use para novos usuários, empty states ou getting started.",
+    "argumentHint": "[alvo]"
+  },
+  "layout": {
+    "description": "Melhora layout, espaçamento e ritmo visual. Corrige grids monótonos, espaçamento inconsistente e hierarquia fraca. Use quando o layout parecer errado, apertado ou desalinhado.",
+    "argumentHint": "[alvo]"
+  },
+  "optimize": {
+    "description": "Diagnostica e corrige performance de UI: carregamento, renderização, animações, imagens e bundle. Use quando estiver lento, engasgado ou quiser experiência mais rápida.",
+    "argumentHint": "[alvo]"
+  },
+  "overdrive": {
+    "description": "Empurra a interface além do convencional com implementações ambiciosas — shaders, spring physics, reveals no scroll, animações a 60fps. Use para impressionar ou algo extraordinário.",
+    "argumentHint": "[alvo]"
+  },
+  "polish": {
+    "description": "Passagem final de qualidade: alinhamento, espaçamento, consistência e microdetalhes antes de publicar. Use para polish, retoques finais ou quando algo 'parece quase certo'.",
+    "argumentHint": "[alvo]"
+  },
+  "quieter": {
+    "description": "Acalma designs agressivos ou excessivos, reduzindo intensidade sem perder qualidade. Use quando estiver ousado demais, barulhento, cansativo ou quiser estética mais refinada.",
+    "argumentHint": "[alvo]"
+  },
+  "shape": {
+    "description": "Planeja UX/UI antes do código. Faz entrevista de discovery (uma rodada por padrão), usa probes visuais quando disponíveis e produz um brief confirmado para implementação.",
+    "argumentHint": "[feature a planejar]"
+  },
+  "typeset": {
+    "description": "Melhora tipografia: fontes, hierarquia, tamanho, peso e legibilidade. Use quando fontes, hierarquia ou legibilidade estiverem ruins ou a tipografia parecer sem intenção.",
+    "argumentHint": "[alvo]"
+  }
+}

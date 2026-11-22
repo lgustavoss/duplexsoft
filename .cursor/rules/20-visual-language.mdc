@@ -1,0 +1,14 @@
+---
+description: Linguagem visual DuplexSoft — defere craft ao Impeccable; mantém restrições de marca no projeto.
+globs: **/*.{tsx,ts,jsx,js,css,scss,html}
+alwaysApply: false
+---
+# Visual language — DuplexSoft site
+
+- Follow `DESIGN.md` and tokens in `src/app/globals.css`. Prefer `text-brand-deep`, `bg-brand`, `text-accent`, `border-line`, `.display-font`, `.site-shell`.
+- For composition, typography, color, spacing, hierarchy, polish, or AI-template smells, use Impeccable commands (`/impeccable layout|typeset|colorize|critique|polish|distill|…`) rather than reinventing playbooks.
+- Marketing pages: one job per section; brand-first hero; avoid dashboard strips and generic three-card SaaS grids unless content truly needs them.
+- CTAs: primary filled (`bg-brand` / `rounded-full`), secondary outline (`border-line`). Keep this pair consistent.
+- Prefer realistic copy about postos, DX Web, WebPosto, Uberaba/Triângulo Mineiro. No lorem ipsum.
+- Do not swap Fraunces/Manrope or the blue brand system for fashionable template aesthetics (detector ignores record these brand fonts intentionally).
+- Do not copy a reference site wholesale; extract specific patterns and adapt them.

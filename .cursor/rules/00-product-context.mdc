@@ -1,0 +1,17 @@
+---
+description: Contexto de produto DuplexSoft; PRODUCT.md é canônico; Impeccable cuida do craft visual.
+alwaysApply: true
+---
+# DuplexSoft — product-aware UI
+
+- This repo is the **institutional marketing site** for DuplexSoft (`www.duplexsoft.com.br`), not the operational app (`app.duplexsoft.com.br`).
+- **Canonical context:** `PRODUCT.md` (product) and `DESIGN.md` (visual system). Legacy mirrors: `product-design-brief.md`, `docs/design-system.md` — do not let them diverge.
+- Optimize for brand credibility, regional trust (Uberaba / Triângulo Mineiro), clear storytelling (DX Web + WebPosto), and conversion (contato, WhatsApp, chat, acesso ao app).
+- Prefer editing content via `src/lib/site.ts` (`siteConfig`, `solutions`) over scattering copy.
+- Preserve brand tokens in `src/app/globals.css` and `DESIGN.md`. Do not replace with generic AI palettes.
+- Do not present DropDesk in the product showcase unless `PRODUCT.md` is updated.
+- Reuse `Header`, `Footer`, `BrandLogo`/`BrandMark`, `ContactForm`, `SolutionPreview`, and shell classes (`.site-shell`, `.display-font`, `.hero-stage`, `.surface-panel`).
+- **Visual craft / polish / AI-slop detection:** prefer Impeccable (`/impeccable …`). **Product UX / IA / handoff:** `ui-ux-designer`. **Implementation:** `senior-frontend-engineer`. **Independent rendered review:** `visual-reviewer`. **A11y deep-dive:** `accessibility-reviewer`.
+- Scale process to task size: a one-line fix does not need full discovery + critique + audit.
+- If a decision materially affects brand or conversion and cannot be inferred, ask one focused question; otherwise document an explicit assumption.
+- Respond and write UI copy in Portuguese (pt-BR) unless the user asks otherwise.

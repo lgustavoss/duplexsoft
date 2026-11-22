@@ -1,0 +1,21 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "manrope",
+        "createdAt": "2026-11-21T23:04:23.631Z",
+        "reason": "Brand body font for DuplexSoft institutional site"
+      },
+      {
+        "rule": "overused-font",
+        "value": "sora",
+        "createdAt": "2026-11-21T23:55:34.798Z",
+        "reason": "Display font matching DuplexSoft geometric wordmark"
+      }
+    ]
+  },
+  "buildPath": "code"
+}
