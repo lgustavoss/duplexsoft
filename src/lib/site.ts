@@ -23,6 +23,10 @@ export const siteConfig = {
     kb: process.env.NEXT_PUBLIC_DESKRUDDER_KB_URL ?? "",
     chatSrc: process.env.NEXT_PUBLIC_DESKRUDDER_CHAT_SRC ?? "",
     instagram: "https://www.instagram.com/duplexsoft",
+    /** Base de conhecimento do suporte (abre em nova aba quando preenchida). */
+    supportKb: process.env.NEXT_PUBLIC_SUPPORT_KB_URL ?? "",
+    /** Painel de chamados / supervisor (abre em nova aba quando preenchida). */
+    supportTickets: process.env.NEXT_PUBLIC_SUPPORT_TICKETS_URL ?? "",
   },
   qr: {
     whatsapp: "/qr/whatsapp.png",
@@ -32,9 +36,49 @@ export const siteConfig = {
     { href: "/", label: "Início" },
     { href: "/sobre", label: "Sobre" },
     { href: "/solucoes", label: "Soluções" },
+    { href: "/suporte", label: "Suporte" },
     { href: "/contato", label: "Contato" },
   ],
 } as const;
+
+/** Cards do hub /suporte. URLs externas vazias = “Em breve”. */
+export const supportResources = [
+  {
+    id: "contagem-caixa",
+    title: "Contagem de caixa",
+    description:
+      "Some notas e moedas, informe o fundo do próximo turno e veja o que retirar — fundo exato, com o máximo de troco no gaveteiro. Anônimo, sem guardar dados.",
+    href: "/suporte/ferramentas/contagem-caixa",
+    external: false,
+  },
+  {
+    id: "base-conhecimento",
+    title: "Base de conhecimento",
+    description:
+      "Artigos e orientações para o dia a dia do posto e dos sistemas.",
+    href: "",
+    hrefKey: "supportKb" as const,
+    external: true,
+  },
+  {
+    id: "chamados",
+    title: "Acompanhar chamados",
+    description:
+      "Painel para o supervisor acompanhar os chamados da empresa.",
+    href: "",
+    hrefKey: "supportTickets" as const,
+    external: true,
+  },
+] as const;
+
+export function resolveSupportHref(
+  resource: (typeof supportResources)[number],
+): string {
+  if ("hrefKey" in resource && resource.hrefKey) {
+    return siteConfig.links[resource.hrefKey] || resource.href;
+  }
+  return resource.href;
+}
 
 /** Módulos do WebPosto (referência pública: webposto.com.br) — comercializados pela DuplexSoft. */
 export const webPostoModules = [

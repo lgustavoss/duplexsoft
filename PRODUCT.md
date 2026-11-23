@@ -28,10 +28,11 @@ Revenda autorizada WebPosto com presença local em Uberaba; DX Web como soluçã
 
 ## Operating Context
 
-- Páginas: Início (`/`), Sobre (`/sobre`), Soluções (`/solucoes`), Contato (`/contato`)
+- Páginas: Início (`/`), Sobre (`/sobre`), Soluções (`/solucoes`), Suporte (`/suporte`), Contato (`/contato`)
 - Fluxos: home (WebPosto-first) → soluções → contato; WhatsApp; formulário; chat DeskRudder quando configurado
 - Instagram: canal paralelo (não espelhar o feed no site)
-- Base de conhecimento: ideia futura — **fora do site nesta fase**
+- Suporte: hub com ferramentas públicas; contagem de caixa em `/suporte/ferramentas/contagem-caixa` (anônima, sem armazenamento)
+- Base de conhecimento e painel de chamados: links externos via `NEXT_PUBLIC_SUPPORT_KB_URL` e `NEXT_PUBLIC_SUPPORT_TICKETS_URL` (nova aba); sem URL = “Em breve”
 - App operacional é produto separado
 
 ## Capabilities and Constraints
@@ -41,7 +42,8 @@ Revenda autorizada WebPosto com presença local em Uberaba; DX Web como soluçã
 - Contato via `src/app/api/contact` + Resend
 - Idioma: pt-BR
 - Vitrine: WebPosto (prioritário) + DX Web; DropDesk fora
-- Não inventar preços, depoimentos ou páginas de KB
+- Contagem de caixa: cálculo 100% no cliente (`src/lib/cash-count.ts`); não enviar nem persistir inventário; fundo informado deve fechar exatamente; sangria prioriza deixar o máximo de troco no gaveteiro
+- Não inventar preços, depoimentos ou conteúdo de KB
 
 ## Brand Commitments
 

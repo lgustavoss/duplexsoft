@@ -191,7 +191,10 @@ export function Header() {
 
           <nav className="hidden items-center gap-7 md:flex" aria-label="Principal">
             {siteConfig.nav.map((item) => {
-              const active = pathname === item.href;
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname === item.href || pathname.startsWith(`${item.href}/`);
               return (
                 <Link
                   key={item.href}
@@ -328,7 +331,10 @@ export function Header() {
 
             <div className="flex flex-1 flex-col gap-1 overflow-y-auto px-4 py-6">
               {siteConfig.nav.map((item) => {
-                const active = pathname === item.href;
+                const active =
+                  item.href === "/"
+                    ? pathname === "/"
+                    : pathname === item.href || pathname.startsWith(`${item.href}/`);
                 return (
                   <Link
                     key={item.href}
