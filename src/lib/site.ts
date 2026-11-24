@@ -41,6 +41,21 @@ export const siteConfig = {
   ],
 } as const;
 
+/**
+ * Download público do Duplex Suporte (acesso remoto).
+ * Fonte estável: GitHub Release tag rolling `duplex-suporte-windows-flutter`.
+ */
+export const duplexSuporteDownload = {
+  name: "Duplex Suporte",
+  version: "2.0.1",
+  platform: "Windows",
+  /** Link amigável no site — redireciona para o asset do Release. */
+  path: "/suporte/acesso-remoto/download",
+  /** Asset estável no tag rolling. */
+  assetUrl:
+    "https://github.com/lgustavoss/dx-connect/releases/download/duplex-suporte-windows-flutter/duplex-suporte.exe",
+} as const;
+
 /** Cards do hub /suporte. URLs externas vazias = “Em breve”. */
 export const supportResources = [
   {
@@ -50,6 +65,15 @@ export const supportResources = [
       "Some notas e moedas, informe o fundo do próximo turno e veja o que retirar — fundo exato, com o máximo de troco no gaveteiro. Anônimo, sem guardar dados.",
     href: "/suporte/ferramentas/contagem-caixa",
     external: false,
+  },
+  {
+    id: "acesso-remoto",
+    title: "Acesso remoto",
+    description:
+      "Baixe o Duplex Suporte para Windows e permita que nosso técnico ajude o posto à distância — app portátil, sem instalação em Program Files.",
+    href: "/suporte/acesso-remoto/download",
+    external: false,
+    download: true,
   },
   {
     id: "base-conhecimento",

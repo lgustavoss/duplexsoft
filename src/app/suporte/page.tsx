@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { resolveSupportHref, siteConfig, supportResources } from "@/lib/site";
+import {
+  duplexSuporteDownload,
+  resolveSupportHref,
+  siteConfig,
+  supportResources,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Suporte",
   description:
-    "Contagem de caixa para fechamento de turno e canais de ajuda da DuplexSoft no Triângulo Mineiro.",
+    "Contagem de caixa, acesso remoto Duplex Suporte e canais de ajuda da DuplexSoft no Triângulo Mineiro.",
 };
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -16,10 +21,34 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
+function DownloadIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" x2="12" y1="15" y2="3" />
+    </svg>
+  );
+}
+
 export default function SuportePage() {
   const primary = supportResources.find((r) => r.id === "contagem-caixa");
-  const upcoming = supportResources.filter((r) => r.id !== "contagem-caixa");
+  const remote = supportResources.find((r) => r.id === "acesso-remoto");
+  const upcoming = supportResources.filter(
+    (r) => r.id !== "contagem-caixa" && r.id !== "acesso-remoto",
+  );
   const primaryHref = primary ? resolveSupportHref(primary) : "";
+  const remoteHref = remote ? resolveSupportHref(remote) : "";
+  const duplexSuporte = duplexSuporteDownload;
 
   return (
     <div className="site-shell py-14 md:py-20">
@@ -28,7 +57,7 @@ export default function SuportePage() {
           Suporte
         </h1>
         <p className="mt-4 max-w-prose text-pretty leading-relaxed text-muted">
-          Ferramentas do turno e canais de ajuda. Comece pela contagem de caixa.
+          Ferramentas do turno, acesso remoto e canais de ajuda.
         </p>
       </div>
 
@@ -50,6 +79,36 @@ export default function SuportePage() {
             <Link href={primaryHref} className="btn-primary">
               Abrir contagem de caixa
             </Link>
+          </div>
+        </section>
+      ) : null}
+
+      {remote && remoteHref ? (
+        <section
+          aria-labelledby="remote-heading"
+          className="mt-8 rounded-[var(--radius)] border border-line bg-surface p-6 sm:p-8"
+        >
+          <h2
+            id="remote-heading"
+            className="display-font text-2xl font-semibold text-brand-deep md:text-3xl"
+          >
+            {remote.title}
+          </h2>
+          <p className="mt-3 max-w-prose text-pretty leading-relaxed text-muted">
+            {remote.description}
+          </p>
+          <p className="mt-3 text-sm text-muted">
+            {duplexSuporte.name} · {duplexSuporte.platform} · versão {duplexSuporte.version}
+          </p>
+          <div className="mt-6">
+            <a
+              href={remoteHref}
+              className="btn-primary inline-flex items-center gap-2"
+              aria-label={`Baixar ${duplexSuporte.name} para ${duplexSuporte.platform}`}
+            >
+              <DownloadIcon className="h-4 w-4 shrink-0" />
+              Baixar {duplexSuporte.name}
+            </a>
           </div>
         </section>
       ) : null}
